@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 인자탐 생태 지도</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.postimg.cc/c4rrkQ1z/1.png">
+    <script src="https://kit.fontawesome.com/de5804aac8.js" crossorigin="anonymous"></script>    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: auto;
+            margin: 0;
+            background-image: url('path_to_your_background_image.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #afc7ef;
+            overflow-y: auto;
+        }
+        #topBar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 75px;
+            background-color: #4285f4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        #topBar .brand {
+            font-size: 20px;
+            color: white;
+        }
+        #topBar .menu-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        #topBar .menu-icon span {
+            height: 3px;
+            background-color: white;
+            display: block;
+        }
+        #menu {
+            position: absolute;
+            top: 30px;
+            right: 0;
+            background-color: white;
+            width: 150px;
+            border: 1px solid #ccc;
+            display: none;
+            z-index: 1000;
+        }
+        #menu li {
+            list-style-type: none;
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #ccc;
+        }
+        #menu li:hover {
+            background-color: #f7f7f7;
+        }
+        .plant-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            gap: 10px;
+        }
+        .plant-container:nth-child(1) { top: 100px; }
+        .plant-container:nth-child(2) { top: 300px; }
+        .plant-container:nth-child(3) { top: 550px; }
+        .plant-container:nth-child(4) { top: 780px; }
+        .plant-container:nth-child(5) { top: 1000px; }
+        .plant-container:nth-child(6) { top: 1200px; }
+        .plant-container:nth-child(7) { top: 1400px; }    
+        
+        .plant-description {
+            display: flex;
+            flex-direction: row;  /* 방향을 row로 변경 */
+            align-items: center;
+            gap: 20px;  /* 이미지와 설명 사이의 간격 */
+        }
+        
+        .plant-description img {
+            width: 100px;  /* 이미지의 너비 설정 */
+            height: 100px; /* 이미지의 높이 설정 */
+            border-radius: 50%; /* 원형 이미지 효과 */
+        }
+        
+        .plant-description .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .nameOfPlant {
+            font-size: 20px;
+        }
+        
+        .scientific-name {
+            font-size: 15px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="plant-container">
+        <div class="plant-description">
+            <img src="https://cdn.pixabay.com/photo/2018/05/25/15/55/foxtail-3429404_640.jpg">
+            <div class="text">
+                <span class="nameOfPlant">강아지풀</span>
+                <span class="scientific-name"><i>Setaria viridis</i></span>
+                <p>벌판이나 들에 자라는 한해살이풀이다. 줄기는 가늘고 곧추서며 높이는 20~70cm 정도이다. 밑으로부터 가지가 갈라지고 털이 없으며 녹색 또는 자줏빛을 띤다. 가장자리에 털이 있으며 마디가 다소 높다. 들에 흔하게 자라며, 봄에 자라나 7~10월경에 꽃을 피운다.</p>
+            </div>
+        </div>
+    </div>
+    <div class="plant-container">
+        <div class="plant-description">
+            <img src="https://i.postimg.cc/j5jzgqsK/image.png">
+            <div class="text">
+                <span class="nameOfPlant">갈대</span>
+                <span class="scientific-name"><i>Phragmites australis</i></span>
+                <p>습한 모래땅에 사는 여러해살이풀로, 강변이나 호수변에 많이 심어져있다. 본래 기수지역에 자생하는 식물로 염분에 강하다. 줄기는 높이 100~300cm, 마디에 털이 없거나 누운털이 조금 나고, 속이 비어 있다. 잎은 2줄로 어긋나며, 긴 피침형, 길이 20~50cm, 폭 2~4cm, 끝이 밑으로 처지고, 밑이 잎집으로 되어 줄기를 감싸며, 잎혀 위에 짧은 털이 나란히 달리며, 가장자리에는 긴 털이 달린다. 꽃은 9~10월에 이삭꽃차례가 모여서 원추꽃차례를 이루어 피며, 붉은색에서 붉은 갈색으로 변한다.</p>
+            </div>
+        </div>
+    </div>
+    <div class="plant-container">
+        <div class="plant-description">
+            <img src="https://i.postimg.cc/L8B0YVvW/image.png">
+            <div class="text">
+                <span class="nameOfPlant">고마리</span>
+                <span class="scientific-name"><i>Persicaria thunbergii</i></span>
+                <p>고마리는 마디풀과 딸린 한해살이풀이다. 한국 원산이며 중국·일본·러시아 극동부에도 서식한다. 메밀 비슷한 열매가 맺으며, 잡초이다. 물가에서 무리를 지어 자라며 키는 60~100 센티미터에 이른다. 줄기는 모가 지며 털이 없고, 아래로 난 가시가 있다. 잎은 어긋나고 길이 4~10 센티미터, 너비 3~7 센티미터로 밑 양쪽이 옆으로 벋고, 잎몸은 앞으로 길쭉하고 끝이 뾰족하다.</p>
+            </div>
+        </div>
+    </div>
+    <div class="plant-container">
+        <div class="plant-description">
+            <img src="https://i.postimg.cc/pdsGkXwY/image.png">
+            <div class="text">
+                <span class="nameOfPlant">흰버들</span>
+                <span class="scientific-name"><i>Salix alba</i></span>
+                <p> 빠르게 자라지만 수명이 짧고 탄저병, 곰팡이 등 여러 질병에 취약하다. 목재는 바구니를 만드는 데 사용되며 나무로 만든 숯은 화약 제조에 중요한 재료가 된다. 노랑색 꽃이 피며, 진한 노랑색 열매가 맺힌다. 북반구 한대, 온대, 남반구 등지에 약 300종이 분포하며 낙엽 관목 또는 교목으로 자란다. 잎은 어긋나게 붙으며 피침 또는 둥근모양이다. 솜털이 많은 씨앗이 달리는 점이 특징이다.</p>
+            </div>
+        </div>
+    </div>
+    <div class="plant-container">
+        <div class="plant-description">
+            <img src="https://i.postimg.cc/xC7sDpTX/image.png">
+            <div class="text">
+                <span class="nameOfPlant">닭의 장풀</span>
+                <span class="scientific-name"><i>Commelina communis</i></span>
+                <p>닭의장풀은 높이 15~50㎝ 정도의 한해살이풀로 운장산 정상 부근에서 난쟁이 바위솔·바위채송화·원추리 등과 함께 자생한다. 잎은 달걀 모양으로 길이는 5~7㎝이고 폭은 1~2.5㎝이며 굵은 마디에서 나온다. 7~8월이 되면 2장의 푸른색 꽃잎과 투명한 막질로 된 1장의 꽃잎을 달고 조개 모양의 꽃받침에 둘러싸인 꽃이 핀다. </p>
+            </div>
+        </div>
+    </div>
+    <div class="plant-container">
+        <div class="plant-description">
+            <img src="https://species.nibr.go.kr/UPLOAD/digital/species/120000064868/BIMGVP0000014631.jpg">
+            <div class="text">
+                <span class="nameOfPlant">돌피</span>
+                <span class="scientific-name"><i>Echinochloa crus-galli (L.) P.Beauv.</i></span>
+                <p>전 세계의 온대와 열대에 분포하며 우리나라에서는 논, 도랑 등 습한 환경에서 흔하게 자란다. 벼와 비슷한 생김새를 가지고 있는 한해살이풀이다. 열매는 벼, 보리와 같이 열매껍질이 말라 씨껍질과 붙어 하나처럼 되는 영과의 형태를 띱니다.</p>
+            </div>
+        </div>
+    </div>
+    <div class="plant-container">
+        <div class="plant-description">
+            <img src="https://i.postimg.cc/prhKv0h6/image.png">
+            <div class="text">
+                <span class="nameOfPlant">개기장</span>
+                <span class="scientific-name"><i>Panicum bisulcatum Thunb.</i></span>
+                <p> 전 세계의 따뜻한 열대 및 온대 지역에 분포하고 있고 우리나라에서는 습한 풀밭이나 논둑에 자라는 여러해살이풀이다. 높이는 50~150cm이다. 잎집은 거의 털이 없고, 입구에만 긴 털이 있다. 전체 꽃차례에는 긴 가지가 달리고, 작은이삭이 듬성듬성 달리며, 아래로 늘어진다. 전체 길이는 20~30cm이다.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="topBar">
+        <div class="brand" onclick="backToMain()">SASA</div>
+        <div class="brand">2023 인자탐 생물 목록</div>
+        <i class="fa-solid fa-bars fa-xl" style="color: #ffffff;" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </i>
+    </div>
+    <ul id="menu">
+        <li id="ecologyDictionary">생물 목록</li>
+        <li id="ecologyMapMenu">생태 지도</li>
+        <li id="question">문의 사항</li>
+    </ul>
+
+    <script>
+        document.addEventListener('click', function(event) {
+            let menu = document.getElementById('menu');
+            let menuIcon = document.querySelector('.fa-solid');
+        
+            // 클릭된 대상이 메뉴 또는 메뉴 아이콘이 아니면 메뉴를 닫는다.
+            if (!menu.contains(event.target) && !menuIcon.contains(event.target) && menu.style.display !== 'none') {
+                menu.style.display = 'none';
+            }
+        });
+        // 생태 지도
+        document.getElementById('ecologyMapMenu').addEventListener('click', function() {
+            window.location.href = "displayMap.html";
+        });
+        // 생물 목록
+        document.getElementById('ecologyDictionary').addEventListener('click', function() {
+            menu.style.display = 'none';
+        });
+        // 문의 사항
+        document.getElementById('question').addEventListener('click', function() {
+            window.location.href = "question.html";
+        });
+        // 상단 메뉴 창 닫기
+        function toggleMenu() {
+            let menu = document.getElementById('menu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+        // 메인화면으로 돌아가기
+        function backToMain() {
+            document.location.replace("index.html");
+        }
+    </script>
+</body>
+</html>

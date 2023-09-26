@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 인자탐</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.postimg.cc/c4rrkQ1z/1.png">
+    <script src="https://kit.fontawesome.com/de5804aac8.js" crossorigin="anonymous"></script>    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('https://i.postimg.cc/bvZrKQ0d/image.jpg');
+        }
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.5); /* 흰색 배경에 50% 투명도 */
+            z-index: -1; /* 다른 요소들 아래에 위치 */
+        }
+        #topBar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 75px;
+            background-color: #4285f4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        #topBar .brand {
+            font-size: 20px;
+            color: white;
+        }
+        #topBar .menu-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        #topBar .menu-icon span {
+            height: 3px;
+            background-color: white;
+            display: block;
+        }
+        #menu {
+            position: absolute;
+            top: 30px;
+            right: 0;
+            background-color: white;
+            width: 150px;
+            border: 1px solid #ccc;
+            display: none;
+            z-index: 1000;
+        }
+        #menu li {
+            list-style-type: none;
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #ccc;
+        }
+        #menu li:hover {
+            background-color: #f7f7f7;
+        }
+        #mapButton {
+            padding: 15px 30px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .info-box {
+            position: absolute;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+        #backToMain {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            padding: 10px 20px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .mapButton {
+            margin-top: 15px;
+            padding: 15px 30px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #descriptionPane {
+            position: absolute;
+            left: 0;
+            top: 75px; /* topBar의 높이만큼 상단에서 떨어져 있게 설정 */
+            width: 25%; /* 화면의 1/4 너비 */
+            height: calc(100% - 75px); /* 전체 화면 높이에서 topBar 높이를 제외 */
+            background-color: rgb(255, 0, 0);
+            padding: 15px;
+            overflow-y: auto; /* 내용이 많을 경우 스크롤 가능하도록 설정 */
+            display: none; /* 초기에는 숨겨져 있음 */
+            z-index: 1000;
+        }
+        
+        #descriptionTitle {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        #descriptionContent {
+            font-size: 16px;
+        }     
+        .team_name {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.7);  /* 투명한 배경색을 추가하여 내용 가독성 향상 */
+            padding: 5px;
+            border-radius: 5px;  /* 모서리를 둥글게 만들어 디자인 개선 */
+        }  
+        .main_page{
+            position: fixed;
+            top: 150px;
+            padding: 5px;
+            border-radius: 5px;  /* 모서리를 둥글게 만들어 디자인 개선 */
+        } 
+        .container{
+            font-family: arial;
+            font-size: 15px;
+            width: 450px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .button-container {
+            display: flex;          /* flexbox를 사용하여 요소를 수평으로 나열 */
+            gap: 10px;              /* 버튼 사이의 간격 설정 */
+            justify-content: center; /* 버튼을 중앙에 배치 */
+        }
+    </style>
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="team_name">인자탐 B2조
+        <br>
+        박준우, 이예찬, 강선우, 이재현
+    </div>
+    <h1 class="main_page">자연과의 공존</h1>
+    <h4>자연과의 공존을 메인 주제로 2023년 인자탐을 진행하게 된 B2조입니다.</h4>
+    <div class='container'>공존이라는 주제와 연관된 것이 무엇이 있을까 생각을 하다가<br>
+        우리 주변에 흔히 볼 수 있는 하천을 떠올리게 되었습니다.<br><br>
+        하천은 다양한 생물들이 살고 있는 생태계입니다.<br>
+        하천에 사는 생물들은 도시와 함께 공존하고 있는데<br>
+        과연 정말로 그들의 공존에는 문제가 없는지, <br>
+        또 그 생태계에서 누가 우리와 공존하고 있는지<br>
+        알아보고자 본 프로젝트를 진행하게 되었습니다.
+    </div>
+    <div id="topBar">
+        <div class="brand" onclick="backToMain()">SASA</div>
+        <div class="brand">2023 인자탐</div>
+        <i class="fa-solid fa-bars fa-xl" style="color: #ffffff;" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </i>
+    </div>
+    <ul id="menu">
+        <li id="ecologyDictionary">생물 목록</li>
+        <li id="ecologyMapMenu">생태 지도</li>
+        <li id="question">문의 사항</li>
+    </ul>
+    <div class="button-container">
+        <button class="mapButton" id="showMapBtn">지도 보기</button>
+        <button class="mapButton" id="showBiologyBtn">생물 목록</button>
+    </div>
+    <div class="info-box"></div>
+    <div id="descriptionPane">
+        <h2 id="descriptionTitle">지점 정보</h2>
+        <p id="descriptionContent">정보 표시 위치</p>
+    </div>
+    
+    <script>
+        let map;
+        let infoBox;
+        
+        document.addEventListener('click', function(event) {
+            let menu = document.getElementById('menu');
+            let menuIcon = document.querySelector('.fa-solid');
+        
+            // 클릭된 대상이 메뉴 또는 메뉴 아이콘이 아니면 메뉴를 닫는다.
+            if (!menu.contains(event.target) && !menuIcon.contains(event.target) && menu.style.display !== 'none') {
+                menu.style.display = 'none';
+            }
+        });
+
+        // 생태 지도
+        document.getElementById('showMapBtn').addEventListener('click', function() {
+            window.location.href = "displayMap.html";
+        });        
+        document.getElementById('ecologyMapMenu').addEventListener('click', function() {
+            window.location.href = "displayMap.html";
+        });
+
+        // 생물 목록
+        document.getElementById('showBiologyBtn').addEventListener('click', function() {
+            window.location.href = "dictionary.html";
+        }); 
+        document.getElementById('ecologyDictionary').addEventListener('click', function() {
+            window.location.href = "dictionary.html";
+        });
+
+        // 문의 사항
+        document.getElementById('question').addEventListener('click', function() {
+            window.location.href = "question.html";
+        });
+
+        function toggleMenu() {
+            let menu = document.getElementById('menu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+    </script>
+    </body>
+</html>
